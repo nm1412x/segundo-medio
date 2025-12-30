@@ -1,0 +1,193 @@
+@font-face{
+    font-family: 'BBh bolgle';
+    src: url(../../fuente/BBHBogle-Regular.ttf);
+    font-weight: bold;
+    font-style: bold;
+}
+
+.title{
+    font-family: 'BBh bolgle';
+    font-weight: bolder;
+    text-align: center;
+    color: #ff0;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+    -webkit-text-stroke: 2px #000;
+    font-size: 45px;
+}
+
+.grid-container { 
+    display: grid; 
+    gap: 20px; 
+    justify-content: center; 
+    justify-items: center; 
+    padding: 20px;
+    grid-template-columns: repeat(2, 1fr); /* móvil: 2 columnas */
+}
+
+/* Tablet: 4 en fila */
+@media (min-width: 768px) { 
+    .grid-container { 
+        grid-template-columns: repeat(4, 1fr); 
+    } 
+}
+
+/* PC: 6 en fila */ 
+@media (min-width: 1024px) { 
+    .grid-container { 
+        grid-template-columns: repeat(6, 1fr); 
+    } 
+}
+
+.btn-container { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-decoration: none;
+} 
+
+.btn-img { 
+    width: 166.5px;   /* tamaño fijo en móvil */
+    height: 166.5px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    cursor: pointer; 
+    transition: transform 0.3s ease; 
+} 
+
+.btn-text { 
+    margin-top: 10px; 
+    color: blue; 
+    font-family: Arial, sans-serif; 
+    font-size: 18px; 
+    transition: color 0.3s ease; 
+    text-align: center;
+    min-height: 3em; 
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+} 
+
+.btn-container:hover .btn-img { 
+    transform: scale(1.1); 
+} 
+
+.btn-container:hover .btn-text { 
+    color: black; 
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) { 
+    .btn-img { 
+        width: 128.5px; 
+        height: 128.5px;
+    } 
+    .btn-text { 
+        font-size: 17px;
+    } 
+}
+
+/* PC */
+@media (min-width: 1024px) { 
+    .btn-img { 
+        width: 192.5px; 
+        height: 192.5px; 
+    } 
+    .btn-text { 
+        font-size: 20px;
+    } 
+}
+
+.disclaimer { 
+    background-color: #ffffff; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 40px auto; 
+    width: 90%;          /* se adapta en móvil */
+    max-width: 900px;    /* límite en PC */
+    font-size: 13px; 
+    color: #666; 
+    text-align: center; 
+    font-family: Arial, sans-serif; 
+    line-height: 1.5; 
+}
+
+.header{
+    width: 100%;              /* ancho del div */
+    height: 50px;              /* alto del div */
+    background-color: #4B4b4b;     /* color de fondo */
+    color: white;               /* color del texto */
+    position: fixed;            /* se queda fijo en la pantalla */
+    top: 0;                     /* pegado arriba */
+    left: 0;                    /* pegado a la izquierda */
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    padding-left: 0;
+    z-index: 10;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+}
+
+.gride-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.unidada {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-decoration: none;
+  color: #333;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.unidada:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.unidada img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.unidada h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.unidada p {
+  font-size: 0.95em;
+  line-height: 1.4;
+  color: #555;
+}
+
+.grids-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn {
+  background-color: #ffffff;
+  color: #000;
+  font-size: 30px;
+  border-radius: 5px;
+  padding: 12px 24px;       /* Espaciado interno */
+  border: none;             /* Quita el borde por defecto */
+  cursor: pointer;          /* Cambia el cursor al pasar */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+}
