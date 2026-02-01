@@ -364,3 +364,8 @@ body.dark .sidebar a:hover {
     color: #ffffff;
     background-color: #1e293b;
 }
+
+/* link activo */
+body.dark .sidebar a.active-link {
+    color: #00d4ff;
+}
