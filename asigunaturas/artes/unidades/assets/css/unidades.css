@@ -356,3 +356,11 @@ body.dark .text {
         margin-left: 0;
     }
 }
+body.dark .sidebar a {
+    color: #e5e7eb;            /* texto claro */
+}
+
+body.dark .sidebar a:hover {
+    color: #ffffff;
+    background-color: #1e293b;
+}
