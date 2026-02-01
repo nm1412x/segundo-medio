@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal educativo</title>
+
+    <link rel="icon" type="img/jpg" href="icono-principal/mineduc.jpg">
+    <link rel="stylesheet" href="assets/css/index.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- ===== POPUP ===== -->
+    <div id="miVentana" class="overlay">
+        <div class="popup">
+            <h2>Bienvenido al portal educativo de Segundo Medio</h2>
+            <p>
+                Esta página web es una <strong>herramienta de apoyo educativo</strong> que reúne términos y conceptos clave para acompañarte en tu aprendizaje durante el año escolar. 
+                <br><br>
+                <strong>Nota:</strong> Este sitio es una iniciativa de un <strong>programador independiente y no pertenece ni representa al Ministerio de Educación.</strong>
+                <br>
+                Las imágenes de los botones de las asignaturas y del selector de unidades provienen del <a href="https://www.curriculumnacional.cl/docentes/Nivel/Educacion-General/2-Medio/">sitio oficial del Mineduc</a> y se utilizan únicamente con fines orientativos.
+                <br><br>
+                ¡Mucho éxito en tu desempeño en Segundo Medio!
+            </p>
+            <button id="btnAceptar">¡Continuar!</button>
+        </div>
+    </div>
+    <script src="assets/js/popus.js"></script>
+    <!-- ===== HEADER ===== -->
+    <div class="header">
+        <h1>2° Medio</h1>
+    </div>
+
+    <!-- ===== TOGGLE TEMA ===== -->
+    <input type="checkbox" id="toggle">
+
+    <label for="toggle" id="label_toggle">
+        <i id="theme-icon" class="fa-solid fa-moon"></i>
+    </label>
+    <script src="assets/js/theme.js"></script>
+    <h2>¿Qué vas aprender hoy?</h2>
+
+    
+    <a  href="asigunaturas/artes/artes.html"class="btn-container">
+        <img src="img-button/artes-visuales.jpg" alt="artes visuales" class="btn-img">
+        <span class="btn-text">Artes Visuales</span>
+    </a>
+</body>
+</html>
+

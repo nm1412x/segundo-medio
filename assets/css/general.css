@@ -1,0 +1,374 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BOTÓN DE 3 LÍNEAS */
+.menu-btn {
+    position: fixed;
+    top: 25px;
+    right: 25px; 
+    width: 35px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 2000; 
+}
+
+.line {
+    width: 100%;
+    height: 4px;
+    background-color: white; 
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+}
+
+/* Transformación a X */
+.menu-btn.open .line:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+.menu-btn.open .line:nth-child(2) { opacity: 0; }
+.menu-btn.open .line:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+
+/* MENÚ LATERAL */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px; 
+    width: 280px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); 
+    transition: all 0.4s ease;
+    padding-top: 80px;
+    z-index: 1999;
+    /* Efecto blur para que el video se vea borroso detrás del menú */
+    backdrop-filter: blur(10px); 
+}
+
+.sidebar.active {
+    right: 0; 
+}
+
+.titulo-menu {
+    color: #fff;
+    text-align: center;
+    border-bottom: 2px solid #00d4ff;
+    padding-bottom: 10px;
+    margin: 0 20px 20px 20px;
+    font-family: sans-serif;
+}
+
+.sidebar ul { list-style: none; padding: 0; }
+
+.sidebar ul li a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid #333;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover { 
+    background-color: rgba(0, 212, 255, 0.1); 
+    color: #00d4ff; 
+}
+
+/* --- LA CLASE ESPECIAL --- */
+.sidebar ul li a.active-link {
+    background-color: rgba(0, 212, 255, 0.2); /* Fondo celeste suave */
+    color: #00d4ff; /* Texto celeste brillante */
+    border-right: 5px solid #00d4ff; /* Barra indicadora a la derecha */
+    font-weight: bold;
+    pointer-events: none; /* Desactiva el clic porque ya estás en la página */
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5); /* Brillo neón */
+}
+
+/* 1. Fondo semitransparente que cubre toda la pantalla */
+.overlay {
+    display: none; /* Se activa mediante el archivo principal.js */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Color negro con 75% de opacidad */
+    background-color: rgba(0, 0, 0, 0.75); 
+    /* Efecto opcional de desenfoque en el fondo */
+    backdrop-filter: blur(4px); 
+    z-index: 9999;
+}
+
+/* 2. La ventana emergente (el recuadro blanco) */
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* CORRECCIÓN: translate ahora tiene los % para centrar perfectamente */
+    transform: translate(-50%, -50%); 
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    /* Sombra para que resalte sobre el fondo oscuro */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 3. Estilo para el botón Aceptar */
+#btnAceptar {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+#btnAceptar:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el texto dentro del popup */
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.popup p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* FONDO */
+body.fondo {
+    min-height: 100dvh;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    font-family: Arial, sans-serif;
+}
+
+/* VIDEO FONDO  Y CREDITOS*/
+.fondo-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.video-credit{
+    margin: 10px auto 20px;
+    padding: 8px 16px;
+    max-width: fit-content;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+}
+.video-credit a{
+    color: #4a3fff;
+    text-decoration: none;
+}
+
+.video-credit a:hover{
+    text-decoration: underline;
+}
+
+/* TÍTULO */
+.Artes {
+    font-family: 'BBh bolgle' ;
+    font-weight: bolder;
+    text-align: center;
+    color: #ff0;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    -webkit-text-stroke: 2px #000;
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+.Biologia{
+    font-family:'Roboto_Mono';
+    font-weight: bolder;
+    text-align: center;
+    color: #0f0;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    -webkit-text-stroke: 2px #000;
+    font-size: 45px;
+    margin-bottom: 30px;
+
+}
+
+.Física{
+    font-family: 'Orbitron' ;
+    font-weight: bolder;
+    text-align: center;
+    color: #38bdf8;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    -webkit-text-stroke: 2px #000;
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+/* GRID UNIDADES */
+.gride-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+/* TARJETAS */
+.unidada {
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: #333;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.unidada:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.unidada img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.unidada h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.unidada p {
+    font-size: 0.95em;
+    line-height: 1.4;
+    color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1023px) {
+    .gride-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gride-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   TOGGLE TEMA
+   ========================= */
+
+#toggle {
+    display: none;
+}
+
+#label_toggle {
+    position: fixed;
+    top: 3px;
+    left: 3px; /* separado del menú hamburguesa */
+    font-size: 1.8em;
+    cursor: pointer;
+    color: white;
+    z-index: 3000;
+}
+
+#theme-icon{
+    font-size: 35px;
+    color: #9ca3af;
+    transition: color 0.3s ease;
+}
+
+body.dark #theme-icon{
+    color: #facc15;
+}
+/* =========================
+   MODO OSCURO
+   ========================= */
+
+body.dark {
+    background-color: #111;
+    color: #fff;
+}
+
+/* Header / textos generales */
+
+body.dark h2,
+body.dark h3,
+body.dark p {
+    color: #fff;
+}
+
+/* Popup en oscuro */
+body.dark .popup {
+    background-color: #1e1e1e;
+}
+
+body.dark .popup h2 {
+    color: #fff;
+}
+
+body.dark .popup p {
+    color: #ccc;
+}
+
+/* Botón popup */
+body.dark #btnAceptar {
+    background-color: #0d6efd;
+}
+
+body.dark #btnAceptar:hover {
+    background-color: #0b5ed7;
+}
+
+/* Sidebar */
+body.dark .sidebar {
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+
+
+body.dark .sidebar ul li a:hover {
+    background-color: rgba(0, 212, 255, 0.15);
+    color: #00d4ff;
+}
+
+/* Tarjetas unidades */
+body.dark .unidada {
+    background: rgba(30, 30, 30, 0.9);
+    color: #eee;
+}
+
+body.dark .unidada h3 {
+    color: #fff;
+}
+
+body.dark .unidada p {
+    color: #ccc;
+}
+
+/* Icono luna / sol */
+body.dark #label_toggle {
+    color: #fff;
+}
