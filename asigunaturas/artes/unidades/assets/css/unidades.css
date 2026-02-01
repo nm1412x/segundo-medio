@@ -356,27 +356,3 @@ body.dark .text {
         margin-left: 0;
     }
 }
-
-/* ===== OVERLAY ===== */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s ease;
-    z-index: 998;
-}
-
-.overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* Overlay en modo oscuro */
-body.dark .overlay {
-    background: rgba(0,0,0,0.7);
-}
